@@ -13,7 +13,7 @@ def send_email(email_recipient,
                email_message,
                attachment_location = ''):
 
-    email_sender = 'sitcreator@outlook.com'
+    email_sender = 'sitrcreator@outlook.com'
 
     msg = MIMEMultipart()
     msg['From'] = email_sender
@@ -46,7 +46,7 @@ def send_email(email_recipient,
     return True
 
 if __name__ == "__main__":
-    for i in range(25):
+    for i in range(10):
         #Incident, date, location, offender, command, rank, age, race, gender, victim
         incident = ["DOMESTIC ABUSE", "RACE DISCRIMINATION", "GENDER DISCRIMINATION", "SEXUAL ASSAULT", "VEHICULAR ACCIDENT"]
         commands = ["New York Yankees", "San Antonio Spurs", "Dallas Cowboys", "University of Texas Longhorns"]
@@ -55,6 +55,6 @@ if __name__ == "__main__":
         person = ["E-1", "E-2", "E-3", "E-4", "E-5", "E-6", "E-7", "E-8", "E-9", "O-1", "O-2", "O-3", "O-3", "O-4", "O-5", "O-6", "O-7", "O-8", "O-9", "CIV"]
         adeo = ["YES", "NO"]
         d = datetime.now()
-        message = f"1. INCIDENT: {random.choices(incident)[0]}\n2. DATE OF INCIDENT: {d}\n3. LOCATION OF INCIDENT: {random.choices(commands)[0]}\n4. OFFENDER: {random.choices(person)[0]}\n5. COMMAND: {random.choices(commands)[0]}\n6. GENDER: {random.choices(gender)[0]}\n7. AGE: {random.randrange(18, 55)}\n8. RACE: {random.choices(race)[0]}\n9. ALOCOHOL: {random.choices(adeo)[0]}, DRUGS: {random.choices(adeo)[0]}"
+        message = f"1. INCIDENT: {random.choices(incident)[0]}\n2. DATE OF INCIDENT: {d}\n3. LOCATION OF INCIDENT: {random.choices(commands)[0]}\n4. OFFENDER: {random.choices(person)[0]}\n5. COMMAND: {random.choices(commands)[0]}\n6. GENDER: {random.choices(gender)[0]}\n7. AGE: {random.randrange(18, 55)}\n8. RACE: {random.choices(race)[0]}\n9. ALCOHOL: {random.choices(adeo)[0]}, DRUGS: {random.choices(adeo)[0]}"
         send_email("sitreceiver@outlook.com", "sitrep", message, "")
-        time.sleep(5)
+        time.sleep(10))
