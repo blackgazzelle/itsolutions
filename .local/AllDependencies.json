@@ -5127,15 +5127,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\keato\\.nuget\\packages\\": {}
+    "C:\\Users\\chris\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "itsolutions",
       "projectName": "itsolutions",
-      "projectPath": "C:\\Users\\keato\\OneDrive\\Documents\\GitHub\\itsolutions\\.local",
-      "packagesPath": "C:\\Users\\keato\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\keato\\OneDrive\\Documents\\GitHub\\itsolutions\\.local"
+      "projectPath": "C:\\Users\\chris\\OneDrive\\Desktop\\ITSOLUTIONS\\itsolutions\\.local",
+      "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\chris\\OneDrive\\Desktop\\ITSOLUTIONS\\itsolutions\\.local"
     },
     "frameworks": {
       "net461": {
@@ -5166,7 +5166,7 @@
             "version": "[21.4.4, 21.4.4]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\keato\\AppData\\Local\\UiPath\\app-21.4.4\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\chris\\AppData\\Local\\UiPath\\app-21.4.4\\runtime.json"
       }
     }
   }
