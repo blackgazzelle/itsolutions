@@ -13,7 +13,7 @@ def send_email(email_recipient,
                email_message,
                attachment_location = ''):
 
-    email_sender = 'sitreceiver@outlook.com'
+    email_sender = 'sitcreator@outlook.com'
 
     msg = MIMEMultipart()
     msg['From'] = email_sender
@@ -36,7 +36,7 @@ def send_email(email_recipient,
         server = smtplib.SMTP('smtp.office365.com', 587)
         server.ehlo()
         server.starttls()
-        server.login('sitreceiver@outlook.com', 'sitrepdummyemail062021')
+        server.login('sitcreator@outlook.com', 'sitrepdummyemail062021')
         text = msg.as_string()
         server.sendmail(email_sender, email_recipient, text)
         print('email sent')
@@ -46,7 +46,7 @@ def send_email(email_recipient,
     return True
 
 if __name__ == "__main__":
-    for i in range(10):
+    for i in range(5):
         #Incident, date, location, offender, command, rank, age, race, gender, victim
         incidents = ["DOMESTIC ABUSE", "RACE DISCRIMINATION", "GENDER DISCRIMINATION", "SEXUAL ASSAULT", "VEHICULAR ACCIDENT"]
         commands = ["New York Yankees", "San Antonio Spurs", "Dallas Cowboys", "University of Texas Longhorns"]
@@ -65,7 +65,35 @@ if __name__ == "__main__":
         alc = random.choices(adeo)[0]
         drugs = random.choices(adeo)[0]
 
-        # Build the message from that data
+        # Build the message from that data\
+        message = "RTTUZYUW RHOIAAA0001 1451706-UUUU--RHSSSUU.ZNR UUUUU
+R 251651Z MAY 11 MID200000886340U
+FM NAVTALACQGRU PACIFIC NORTHWEST SEATTLE WA
+TO COMNAVCRUITREG WEST MILLINGTON TN
+COMNAVCRUITCOM MILLINGTON TN
+NETC PENSACOLA FL
+CNO WASHINGTON DC
+INFO COMUSFLTFORCOM NORFOLK VA
+CHINFO WASHINGTON DC
+NAVY JAG WASHINGTON DC
+COMNAVPERSCOM MILLINGTON TN
+CNIC WASHINGTON DC
+DIRNAVCRIMINVSERV QUANTICO VA
+COMNAVREG NW SILVERDALE WA
+NAVCRIMINVSERVRA BREMERTON WA
+NAVCRIMINVSERVRA EVERETT WA
+NAVTALACQGRU PACIFIC NORTHWEST SEATTLE WA
+BT
+UNCLAS
+SECINFO/U/-//
+MSGID/OPREP-3NUS,USMTF,2011/NAVTALACQGRU PACIFIC NORTHWEST SEATTLE
+WA/002//
+FLAGWORD/NAVY UNIT SITREP/-//
+TIMELOC/211502MAY2011/SEATTLE WA/FINAL//
+GENTEXT/INCIDENT IDENTIFICATION AND DETAILS//
+"
         message = f"1. INCIDENT: {incident}\n2. DATE OF INCIDENT: {d}\n3. LOCATION OF INCIDENT: {command}\n4. OFFENDER: {person}\n5. COMMAND: {command}\n6. GENDER: {gender}\n7. AGE: {random.randrange(18, 55)}\n8. RACE: {race}\n9. ALCOHOL: {alc}, DRUGS: {drugs}\n10. SUMMARY/BRIEF DESCRIPTION OF INCIDENT: Incident occured on {d} at {command} with {person}"
+
+        # Send message and loop
         send_email("sitreceiver@outlook.com", "sitrep", message, "")
         time.sleep(10)
