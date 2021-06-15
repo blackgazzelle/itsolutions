@@ -13,7 +13,7 @@ def send_email(email_recipient,
                email_message,
                attachment_location = ''):
 
-    email_sender = 'sitcreator@outlook.com'
+    email_sender = 'sitreceiver@outlook.com'
 
     msg = MIMEMultipart()
     msg['From'] = email_sender
@@ -36,7 +36,7 @@ def send_email(email_recipient,
         server = smtplib.SMTP('smtp.office365.com', 587)
         server.ehlo()
         server.starttls()
-        server.login('sitcreator@outlook.com', 'sitrepdummyemail062021')
+        server.login('sitreceiver@outlook.com', 'sitrepdummyemail062021')
         text = msg.as_string()
         server.sendmail(email_sender, email_recipient, text)
         print('email sent')
@@ -66,6 +66,6 @@ if __name__ == "__main__":
         drugs = random.choices(adeo)[0]
 
         # Build the message from that data
-        message = f"1. INCIDENT: {incident}\n2. DATE OF INCIDENT: {d}\n3. LOCATION OF INCIDENT: {command}\n4. OFFENDER: {person}\n5. COMMAND: {command}\n6. GENDER: {gender}\n7. AGE: {random.randrange(18, 55)}\n8. RACE: {race}\n9. ALCOHOL: {alc}, DRUGS: {drugs} 10. SUMMARY/BRIEF DESCRIPTION OF INCIDENT: Incident occured on {d} at {command} with {person}"
+        message = f"1. INCIDENT: {incident}\n2. DATE OF INCIDENT: {d}\n3. LOCATION OF INCIDENT: {command}\n4. OFFENDER: {person}\n5. COMMAND: {command}\n6. GENDER: {gender}\n7. AGE: {random.randrange(18, 55)}\n8. RACE: {race}\n9. ALCOHOL: {alc}, DRUGS: {drugs}\n10. SUMMARY/BRIEF DESCRIPTION OF INCIDENT: Incident occured on {d} at {command} with {person}"
         send_email("sitreceiver@outlook.com", "sitrep", message, "")
         time.sleep(10)
