@@ -46,7 +46,7 @@ def send_email(email_recipient,
     return True
 
 if __name__ == "__main__":
-    for i in range(5):
+    for i in range(1):
         #Incident, date, location, offender, command, rank, age, race, gender, victim
         incidents = ["DOMESTIC ABUSE", "RACE DISCRIMINATION", "GENDER DISCRIMINATION", "SEXUAL ASSAULT", "VEHICULAR ACCIDENT"]
         commands = ["New York Yankees", "San Antonio Spurs", "Dallas Cowboys", "University of Texas Longhorns"]
@@ -54,6 +54,7 @@ if __name__ == "__main__":
         races = ["WITHHELD", "OTHER", "CAUCASIAN", "AFRICAN-AMERICAN", "ASIAN"]
         persons = ["E-1", "E-2", "E-3", "E-4", "E-5", "E-6", "E-7", "E-8", "E-9", "O-1", "O-2", "O-3", "O-3", "O-4", "O-5", "O-6", "O-7", "O-8", "O-9", "CIV"]
         adeo = ["YES", "NO"]
+        num = ["ONE", "TWO"]
         
         # Generate the random data for each choice
         d = datetime.now()
@@ -64,7 +65,11 @@ if __name__ == "__main__":
         race = random.choices(races)[0]
         alc = random.choices(adeo)[0]
         drugs = random.choices(adeo)[0]
-
+        person2 = random.choices(persons)[0]
+        gender2 = random.choices(genders)[0]
+        race2 = random.choices(races)[0]
+        command2 = random.choices(commands)[0]
+        num = random.choices(num)[0]
         # Build the message from that data\
         message = """RTTUZYUW RHOIAAA0001 1451706-UUUU--RHSSSUU.
         ZNR UUUUU
@@ -93,8 +98,8 @@ if __name__ == "__main__":
         TIMELOC/211502MAY2011/SEATTLE WA/FINAL//
         GENTEXT/INCIDENT IDENTIFICATION AND DETAILS//\n
         """
-        message += f"1. INCIDENT: {incident}\n2. DATE OF INCIDENT: {d}\n3. LOCATION OF INCIDENT: {command}\n4. OFFENDER: {person}\n5. COMMAND: {command}\n6. GENDER: {gender}\n7. AGE: {random.randrange(18, 55)}\n8. RACE: {race}\n9. ALCOHOL: {alc}, DRUGS: {drugs}\n10. SUMMARY/BRIEF DESCRIPTION OF INCIDENT: Incident occured on {d} at {command} with {person}"
-
+       # message += f"1. INCIDENT: {incident}\n2. DATE OF INCIDENT: {d}\n3. LOCATION OF INCIDENT: {command}\n4. OFFENDER: {person}\n5. COMMAND: {command}\n6. GENDER: {gender}\n7. AGE: {random.randrange(18, 55)}\n8. RACE: {race}\n9. ALCOHOL: {alc}, DRUGS: {drugs}\n10. SUMMARY/BRIEF DESCRIPTION OF INCIDENT: Incident occured on {d} at {command} with {person}"
+        message += f"1. INCIDENT: {incident}\n2. DATE OF INCIDENT: {d}\n3. LOCATION OF INCIDENT: {command}\n4. OFFENDER: {person}\n5. COMMAND: {command}\n6. GENDER: {gender}\n7. AGE: {random.randrange(18, 55)}\n8. RACE: {race}\n9. VICTIM: {person2}\n5. GENDER: {gender2}\n7. AGE: {random.randrange(18, 55)}\n8. RACE: {race2}\n9. ALCOHOL: {alc}, DRUGS: {drugs}\n10. SUMMARY/BRIEF DESCRIPTION OF INCIDENT: Incident occured on {d} at {command} with {person}"
         # Send message and loop
         send_email("sitreceiver@outlook.com", "sitrep", message, "")
         time.sleep(10)
