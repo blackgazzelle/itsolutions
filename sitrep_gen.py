@@ -46,7 +46,7 @@ def send_email(email_recipient,
     return True
 
 if __name__ == "__main__":
-    for i in range(1):
+    for i in range(5):
         #Incident, date, location, offender, command, rank, age, race, gender, victim
         incidents = ["DOMESTIC ABUSE", "RACE DISCRIMINATION", "GENDER DISCRIMINATION", "SEXUAL ASSAULT", "VEHICULAR ACCIDENT"]
         commands = ["New York Yankees", "San Antonio Spurs", "Dallas Cowboys", "University of Texas Longhorns"]
@@ -98,8 +98,10 @@ if __name__ == "__main__":
         TIMELOC/211502MAY2011/SEATTLE WA/FINAL//
         GENTEXT/INCIDENT IDENTIFICATION AND DETAILS//\n
         """
-       # message += f"1. INCIDENT: {incident}\n2. DATE OF INCIDENT: {d}\n3. LOCATION OF INCIDENT: {command}\n4. OFFENDER: {person}\n5. COMMAND: {command}\n6. GENDER: {gender}\n7. AGE: {random.randrange(18, 55)}\n8. RACE: {race}\n9. ALCOHOL: {alc}, DRUGS: {drugs}\n10. SUMMARY/BRIEF DESCRIPTION OF INCIDENT: Incident occured on {d} at {command} with {person}"
-        message += f"1. INCIDENT: {incident}\n2. DATE OF INCIDENT: {d}\n3. LOCATION OF INCIDENT: {command}\n4. OFFENDER: {person}\n5. COMMAND: {command}\n6. GENDER: {gender}\n7. AGE: {random.randrange(18, 55)}\n8. RACE: {race}\n9. VICTIM: {person2}\n5. GENDER: {gender2}\n7. AGE: {random.randrange(18, 55)}\n8. RACE: {race2}\n9. ALCOHOL: {alc}, DRUGS: {drugs}\n10. SUMMARY/BRIEF DESCRIPTION OF INCIDENT: Incident occured on {d} at {command} with {person}"
+        if num == "ONE":
+            message += f"1. INCIDENT: {incident}\n2. DATE OF INCIDENT: {d}\n3. LOCATION OF INCIDENT: {command}\n4. OFFENDER: {person}\n5. COMMAND: {command}\n6. GENDER: {gender}\n7. AGE: {random.randrange(18, 55)}\n8. RACE: {race}\n9. ALCOHOL: {alc}, DRUGS: {drugs}\n10. SUMMARY/BRIEF DESCRIPTION OF INCIDENT: Incident occured on {d} at {command} with {person}"
+        else:
+            message += f"1. INCIDENT: {incident}\n2. DATE OF INCIDENT: {d}\n3. LOCATION OF INCIDENT: {command}\n4. OFFENDER: {person}\n5. COMMAND: {command}\n6. GENDER: {gender}\n7. AGE: {random.randrange(18, 55)}\n8. RACE: {race}\n9. VICTIM: {person2}\n5. GENDER OF VICTIM: {gender2}\n7. AGE OF VICTIM: {random.randrange(18, 55)}\n8. RACE OF VICTIM: {race2}\n9. ALCOHOL: {alc}, DRUGS: {drugs}\n10. SUMMARY/BRIEF DESCRIPTION OF INCIDENT: Incident occured on {d} at {command} with {person}"
         # Send message and loop
         send_email("sitreceiver@outlook.com", "sitrep", message, "")
         time.sleep(10)
