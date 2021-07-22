@@ -101,7 +101,7 @@ if __name__ == "__main__":
         if num == "ONE":
             message += f"1. INCIDENT: {incident}\n2. DATE OF INCIDENT: {d}\n3. LOCATION OF INCIDENT: {command}\n4. OFFENDER: {person}\n5. COMMAND: {command}\n6. GENDER: {gender}\n7. AGE: {random.randrange(18, 55)}\n8. RACE: {race}\n9. ALCOHOL: {alc}, DRUGS: {drugs}\n10. SUMMARY/BRIEF DESCRIPTION OF INCIDENT: Incident occured on {d} at {command} with {person}"
         else:
-            message += f"1. INCIDENT: {incident}\n2. DATE OF INCIDENT: {d}\n3. LOCATION OF INCIDENT: {command}\n4. OFFENDER: {person}\n5. COMMAND: {command}\n6. GENDER: {gender}\n7. AGE: {random.randrange(18, 55)}\n8. RACE: {race}\n9. VICTIM: {person2}\n5. GENDER OF VICTIM: {gender2}\n7. AGE OF VICTIM: {random.randrange(18, 55)}\n8. RACE OF VICTIM: {race2}\n9. ALCOHOL: {alc}, DRUGS: {drugs}\n10. SUMMARY/BRIEF DESCRIPTION OF INCIDENT: Incident occured on {d} at {command} with {person}"
+            message += f"1. INCIDENT: {incident}\n2. DATE OF INCIDENT: {d}\n3. LOCATION OF INCIDENT: {command}\n4. OFFENDER: {person}\n5. COMMAND: {command}\n6. GENDER: {gender}\n7. AGE: {random.randrange(18, 55)}\n8. RACE: {race}\n9. VICTIM: {person2}\n10. GENDER OF VICTIM: {gender2}\n11. AGE OF VICTIM: {random.randrange(18, 55)}\n12. RACE OF VICTIM: {race2}\n13. ALCOHOL: {alc}, DRUGS: {drugs}\n14. SUMMARY/BRIEF DESCRIPTION OF INCIDENT: Incident occured on {d} at {command} with {person}"
         # Send message and loop
         send_email("sitreceiver@outlook.com", "sitrep", message, "")
-        time.sleep(10)
+        time.sleep(1)
